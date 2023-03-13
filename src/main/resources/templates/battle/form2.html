@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Battle - Init</title>
+</head>
+<body>
+
+
+
+  <form action="#" th:action="@{/app/battles/round}" th:object="${player}" method="post" >
+    <select th:field="*{id}">
+      <option  th:value="${player.id}" th:text="${player.name}" />
+    </select>
+    <input type="submit" value="Start" />
+  </form>
+</body>
+</html>
