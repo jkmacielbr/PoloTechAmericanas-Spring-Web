@@ -1,5 +1,6 @@
 package br.ada.americanas.moviebattle.player;
 
+import br.ada.americanas.moviebattle.battle.Battle;
 import br.ada.americanas.moviebattle.movie.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/player")
 public class PlayerRestController {
+
 
     private PlayerService service;
 
@@ -38,7 +40,11 @@ public class PlayerRestController {
         return this.service.update(player);
     }
 
-    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+
+
+
+    @GetMapping(value = "/listPlayers",
+            produces = {MediaType.APPLICATION_JSON_VALUE})
     public Iterable<Player> list() {
         return service.list();
     }

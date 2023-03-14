@@ -25,7 +25,7 @@ public class PlayerService {
     }
 
     public Iterable<Player> list() {
-        return this.repository.findAll();
+        return this.repository.findAllByOrderByScoreDesc();
     }
 
     public Optional<Player> findById(Long id) {
