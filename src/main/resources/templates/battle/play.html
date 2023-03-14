@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <style>
   .movie-selected {
-    border: solid blue 2px;
+    border: solid blue 3px;
+
   }
 
   .movie-image {
@@ -25,8 +26,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Battle</title>
+
 </head>
 <body>
+
   <div class="battle" th:align="center">
     <h1 th:text="${battle.description}" />
     <form action="#" th:action="@{'/app/battles/'+${battle.id} + '/answer'}" th:object="${selected_movie}" method="post">
@@ -38,6 +41,7 @@
       <input id="movie-selected" type="hidden" th:field="*{id}">
 
 
+      </br>
 
       <input type="submit" th:value="Votar">
 

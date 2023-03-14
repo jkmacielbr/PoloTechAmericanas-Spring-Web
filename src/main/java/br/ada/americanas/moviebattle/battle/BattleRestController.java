@@ -43,8 +43,6 @@ public class BattleRestController {
             @RequestBody Movie movie
     ) {
 
-
-
         Optional<Battle> battle = battleService.find(id);
         return battleService.answer(battle.get(), movieService.findById(movie.getId()).get());
     }

@@ -4,20 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Player</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
-<form action="#" th:action="@{/app/players}" th:object="${player}" method="post">
-    <label th:text="#{player.name}"/>
-    <input type="text" th:field="*{name}" /><br />
-    <label th:text="#{player.score}"/>
-    <input type="text" th:field="*{score}" /><br />
-    <input type="hidden" th:field="*{id}" />
-    <input type="submit" th:value="#{action.save}">
+
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg" style="background-color: #9f9a9d;">
+            <a class="navbar-brand" th:href="@{/app/players/create}">Cadastro</a>
+        </nav>
+        <nav class="navbar navbar-expand-lg" style="background-color: #9f9a9d;">
+            <a class="navbar-brand" th:href="@{/app/players}">Jogadores</a>
+        </nav>
+        <nav class="navbar navbar-expand-lg" style="background-color: #9f9a9d;">
+            <a class="navbar-brand" th:href="@{/app/battles/create}">Batalha</a>
+        </nav>
+    </div>
+</nav>
+
+
+<br/>
+<br/>
+<br/>
+<div class="container">
+
+    <form action="#" th:action="@{/app/players}" th:object="${player}" method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" th:field="*{name}" class="form-control" th:placeholder="#{player.name}">
+            </div>
+            <div class="col">
+                <input type="text" th:field="*{score}" class="form-control" th:placeholder="#{player.score}">
+            </div>
+        </div>
+        <br/>
+            <input  type="submit" th:value="#{action.save}">
 
 
 
-</form>
+
+    </form>
+</div>
+
+<!--<form action="#" th:action="@{/app/players}" th:object="${player}" method="post">-->
+<!--    <label th:text="#{player.name}"/>-->
+<!--    <input type="text" th:field="*{name}"/><br/>-->
+<!--    <label th:text="#{player.score}"/>-->
+<!--    <input type="text" th:field="*{score}"/><br/>-->
+<!--    <input type="hidden" th:field="*{id}"/>-->
+<!--    <input type="submit" th:value="#{action.save}">-->
+
+<!--</form>-->
 
 </body>
 </html>
